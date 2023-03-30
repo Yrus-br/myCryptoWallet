@@ -9,21 +9,37 @@
 /* Begin PBXBuildFile section */
 		3F1EE0EE29B658A30062E38B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1EE0ED29B658A30062E38B /* AppDelegate.swift */; };
 		3F1EE0F029B658A30062E38B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1EE0EF29B658A30062E38B /* SceneDelegate.swift */; };
-		3F1EE0F229B658A30062E38B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1EE0F129B658A30062E38B /* ViewController.swift */; };
-		3F1EE0F529B658A30062E38B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F1EE0F329B658A30062E38B /* Main.storyboard */; };
+		3F1EE0F229B658A30062E38B /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1EE0F129B658A30062E38B /* LogInViewController.swift */; };
 		3F1EE0F729B658A40062E38B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F1EE0F629B658A40062E38B /* Assets.xcassets */; };
-		3F1EE0FA29B658A40062E38B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F1EE0F829B658A40062E38B /* LaunchScreen.storyboard */; };
+		3F2EC87F29B660FE00C1371B /* CryptoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2EC87E29B660FE00C1371B /* CryptoListViewController.swift */; };
+		3FCF15E329D5E8E700221E55 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCF15E229D5E8E700221E55 /* NetworkManager.swift */; };
+		3FCF15E529D5E90900221E55 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCF15E429D5E90900221E55 /* Currency.swift */; };
+		3FF48A4B29CCAD6A00201703 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3FF48A4A29CCAD6A00201703 /* SnapKit */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3FF48A4F29CCAFA000201703 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3F1EE0EA29B658A30062E38B /* myCryptoWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myCryptoWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F1EE0ED29B658A30062E38B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F1EE0EF29B658A30062E38B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3F1EE0F129B658A30062E38B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3F1EE0F429B658A30062E38B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3F1EE0F129B658A30062E38B /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		3F1EE0F629B658A40062E38B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		3F1EE0F929B658A40062E38B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F1EE0FB29B658A40062E38B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F2EC87E29B660FE00C1371B /* CryptoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListViewController.swift; sourceTree = "<group>"; };
+		3FCF15E229D5E8E700221E55 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		3FCF15E429D5E90900221E55 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FF48A4B29CCAD6A00201703 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +73,40 @@
 		3F1EE0EC29B658A30062E38B /* myCryptoWallet */ = {
 			isa = PBXGroup;
 			children = (
-				3F1EE0ED29B658A30062E38B /* AppDelegate.swift */,
-				3F1EE0EF29B658A30062E38B /* SceneDelegate.swift */,
-				3F1EE0F129B658A30062E38B /* ViewController.swift */,
-				3F1EE0F329B658A30062E38B /* Main.storyboard */,
-				3F1EE0F629B658A40062E38B /* Assets.xcassets */,
-				3F1EE0F829B658A40062E38B /* LaunchScreen.storyboard */,
-				3F1EE0FB29B658A40062E38B /* Info.plist */,
+				3FF48A4629CCAB2800201703 /* Application */,
+				3FF48A4729CCAB4400201703 /* Views */,
+				3FF48A4829CCAB5100201703 /* Supporting Files */,
+				3FCF15E229D5E8E700221E55 /* NetworkManager.swift */,
+				3FCF15E429D5E90900221E55 /* Currency.swift */,
 			);
 			path = myCryptoWallet;
+			sourceTree = "<group>";
+		};
+		3FF48A4629CCAB2800201703 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				3F1EE0ED29B658A30062E38B /* AppDelegate.swift */,
+				3F1EE0EF29B658A30062E38B /* SceneDelegate.swift */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		3FF48A4729CCAB4400201703 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3F1EE0F129B658A30062E38B /* LogInViewController.swift */,
+				3F2EC87E29B660FE00C1371B /* CryptoListViewController.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		3FF48A4829CCAB5100201703 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3F1EE0F629B658A40062E38B /* Assets.xcassets */,
+				3F1EE0FB29B658A40062E38B /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,12 +119,16 @@
 				3F1EE0E629B658A30062E38B /* Sources */,
 				3F1EE0E729B658A30062E38B /* Frameworks */,
 				3F1EE0E829B658A30062E38B /* Resources */,
+				3FF48A4F29CCAFA000201703 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = myCryptoWallet;
+			packageProductDependencies = (
+				3FF48A4A29CCAD6A00201703 /* SnapKit */,
+			);
 			productName = myCryptoWallet;
 			productReference = 3F1EE0EA29B658A30062E38B /* myCryptoWallet.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +157,9 @@
 				Base,
 			);
 			mainGroup = 3F1EE0E129B658A30062E38B;
+			packageReferences = (
+				3FF48A4929CCAD6A00201703 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 3F1EE0EB29B658A30062E38B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,9 +174,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F1EE0FA29B658A40062E38B /* LaunchScreen.storyboard in Resources */,
 				3F1EE0F729B658A40062E38B /* Assets.xcassets in Resources */,
-				3F1EE0F529B658A30062E38B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,32 +185,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F1EE0F229B658A30062E38B /* ViewController.swift in Sources */,
+				3FCF15E529D5E90900221E55 /* Currency.swift in Sources */,
+				3F1EE0F229B658A30062E38B /* LogInViewController.swift in Sources */,
+				3F2EC87F29B660FE00C1371B /* CryptoListViewController.swift in Sources */,
+				3FCF15E329D5E8E700221E55 /* NetworkManager.swift in Sources */,
 				3F1EE0EE29B658A30062E38B /* AppDelegate.swift in Sources */,
 				3F1EE0F029B658A30062E38B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		3F1EE0F329B658A30062E38B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3F1EE0F429B658A30062E38B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		3F1EE0F829B658A40062E38B /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3F1EE0F929B658A40062E38B /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		3F1EE0FC29B658A40062E38B /* Debug */ = {
@@ -216,7 +247,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -270,7 +301,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -292,9 +323,9 @@
 				INFOPLIST_FILE = myCryptoWallet/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -320,9 +351,9 @@
 				INFOPLIST_FILE = myCryptoWallet/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -358,6 +389,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3FF48A4929CCAD6A00201703 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3FF48A4A29CCAD6A00201703 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3FF48A4929CCAD6A00201703 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3F1EE0E229B658A30062E38B /* Project object */;
 }
