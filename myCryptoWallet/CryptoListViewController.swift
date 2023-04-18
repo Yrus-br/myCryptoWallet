@@ -8,44 +8,69 @@
 import UIKit
 
 
-class CryptoListViewController: UITableViewController, UISearchResultsUpdating {
+class CryptoListViewController: UITableViewController {
+    private var viewModel: CryptoListViewModelProtocol!
     
     private let reuseIdentifier = "Cell"
     
-    private var allCurrencys: Currency?
-    private var currencyArray: [Info] = []
     private let searchController = UISearchController(searchResultsController: nil)
+    
     private var searchBarIsEmpty: Bool {
         guard let text = searchController.searchBar.text else { return false }
         return text.isEmpty
     }
+    
     private var isFiltering: Bool {
         return searchController.isActive && !searchBarIsEmpty
     }
     
+    init(viewModel: CryptoListViewModelProtocol) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.register(CryptoCell.self, forCellReuseIdentifier: reuseIdentifier)
+        
+        viewModel.getData { [weak self] in
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+        }
         
         setupSearchController()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
-        getData()
     }
     
     // MARK: - Table view data source
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        isFiltering ? currencyArray.count : allCurrencys?.data.count ?? 0
+        if isFiltering {
+            return viewModel.filteredCurrencys.count
+        } else {
+            return viewModel.numberOfRows()
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
-        let currency = isFiltering ? currencyArray[indexPath.row] : allCurrencys?.data[indexPath.row]
-
-        var content = cell.defaultContentConfiguration()
-        content.text = currency?.name
-        cell.contentConfiguration = content
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! CryptoCell
+        if isFiltering {
+            // TODO: Исправить модель для CryptoCell для фильтрации поиска
+            //            cell.viewModel = viewModel.filteredCurrencys(for: indexPath)
+        } else {
+            cell.viewModel = viewModel.cellViewModel(for: indexPath)
+        }
         return cell
     }
+    
     
     private func setupSearchController() {
         searchController.searchResultsUpdater = self
@@ -54,31 +79,25 @@ class CryptoListViewController: UITableViewController, UISearchResultsUpdating {
         searchController.searchBar.barTintColor = .white
         navigationItem.searchController = searchController
         definesPresentationContext = true
-    }
-    
-    func updateSearchResults(for searchController: UISearchController) {
-        filterContentForSearchText(searchController.searchBar.text ?? "")
-    }
-    
-    private func getData() {
-        Task {
-            do {
-                allCurrencys = try await NetworkManager.shared.fetchData()
-                tableView.reloadData()
-            } catch let error {
-                print(error)
-            }
+        
+        if let textField = searchController.searchBar.value(forKey: "searchField") as? UITextField {
+            textField.font = UIFont.boldSystemFont(ofSize: 17)
+            textField.textColor = .blue
         }
+        
     }
     
     private func filterContentForSearchText(_ searchText: String) {
-        currencyArray = allCurrencys?.data.filter { character in
-            character.id.lowercased().contains(searchText.lowercased())
-        } ?? []
-        
+        viewModel.filteredCurrencys = viewModel.allCurrencys.filter { (crypto: CurrencyInfo) -> Bool in
+            return crypto.name.lowercased().contains(searchText.lowercased())
+        }
         tableView.reloadData()
     }
-    
 }
 
+extension CryptoListViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContentForSearchText(searchController.searchBar.text ?? "")
+    }
+}
 

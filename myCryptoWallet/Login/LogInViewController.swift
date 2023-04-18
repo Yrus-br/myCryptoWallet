@@ -14,21 +14,24 @@ final class LogInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-    
+        
         initialise()
     }
     
+    
     @objc private func confirmlogIn() {
-        self.view.window?.rootViewController = UINavigationController(rootViewController: CryptoListViewController())
+        let viewModel = CryptoListViewModel()
+        let viewController = CryptoListViewController(viewModel: viewModel)
+        self.view.window?.rootViewController = UINavigationController(rootViewController: viewController)
     }
     
     private  func initialise() {
-
+        
         view.backgroundColor = UIColor(red: 241/255,
                                        green: 238/255,
                                        blue: 228/255,
                                        alpha: 1)
-
+        
         let welcomeLabel: UILabel = {
             let label = UILabel()
             label.text = "Hey! Welcome! 🪙"
@@ -43,7 +46,7 @@ final class LogInViewController: UIViewController {
             textField.layer.cornerRadius = 10
             return textField
         }()
-
+        
         let passwordTF: UITextField = {
             let textField = UITextField()
             textField.placeholder = "PASSWORD"
@@ -85,19 +88,19 @@ final class LogInViewController: UIViewController {
         view.addSubview(passwordTF)
         view.addSubview(confirmButton)
         view.addSubview(forgotPassButton)
-
+        
         welcomeLabel.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.top.equalToSuperview().inset(100)
         }
-
+        
         logInTF.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.top.equalToSuperview().inset(300)
             $0.height.equalTo(50)
             $0.width.equalTo(300)
         }
-
+        
         passwordTF.snp.makeConstraints {
             $0.top.equalTo(logInTF.snp.bottom).offset(15)
             $0.centerX.equalToSuperview()
@@ -116,8 +119,5 @@ final class LogInViewController: UIViewController {
             $0.height.equalTo(confirmButton)
         }
     }
-
-
-
-
+    
 }

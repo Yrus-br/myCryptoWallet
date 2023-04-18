@@ -12,6 +12,10 @@
 		3F1EE0F229B658A30062E38B /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1EE0F129B658A30062E38B /* LogInViewController.swift */; };
 		3F1EE0F729B658A40062E38B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F1EE0F629B658A40062E38B /* Assets.xcassets */; };
 		3F2EC87F29B660FE00C1371B /* CryptoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2EC87E29B660FE00C1371B /* CryptoListViewController.swift */; };
+		3FB0EC4B29EEF25800869D1A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB0EC4A29EEF25800869D1A /* DataManager.swift */; };
+		3FB0EC4D29EEF33000869D1A /* CryptoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB0EC4C29EEF33000869D1A /* CryptoListViewModel.swift */; };
+		3FB0EC4F29EEF9E900869D1A /* CryptoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB0EC4E29EEF9E900869D1A /* CryptoCell.swift */; };
+		3FB0EC5329EEFA1800869D1A /* CryptoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB0EC5229EEFA1800869D1A /* CryptoCellViewModel.swift */; };
 		3FCF15E329D5E8E700221E55 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCF15E229D5E8E700221E55 /* NetworkManager.swift */; };
 		3FCF15E529D5E90900221E55 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCF15E429D5E90900221E55 /* Currency.swift */; };
 		3FF48A4B29CCAD6A00201703 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3FF48A4A29CCAD6A00201703 /* SnapKit */; };
@@ -38,6 +42,10 @@
 		3F1EE0F629B658A40062E38B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F1EE0FB29B658A40062E38B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F2EC87E29B660FE00C1371B /* CryptoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListViewController.swift; sourceTree = "<group>"; };
+		3FB0EC4A29EEF25800869D1A /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		3FB0EC4C29EEF33000869D1A /* CryptoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListViewModel.swift; sourceTree = "<group>"; };
+		3FB0EC4E29EEF9E900869D1A /* CryptoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCell.swift; sourceTree = "<group>"; };
+		3FB0EC5229EEFA1800869D1A /* CryptoCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCellViewModel.swift; sourceTree = "<group>"; };
 		3FCF15E229D5E8E700221E55 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		3FCF15E429D5E90900221E55 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,13 +81,58 @@
 		3F1EE0EC29B658A30062E38B /* myCryptoWallet */ = {
 			isa = PBXGroup;
 			children = (
+				3FB0EC4729EEF1E000869D1A /* CryptoList */,
+				3FB0EC4629EEF1C900869D1A /* Login */,
 				3FF48A4629CCAB2800201703 /* Application */,
-				3FF48A4729CCAB4400201703 /* Views */,
 				3FF48A4829CCAB5100201703 /* Supporting Files */,
-				3FCF15E229D5E8E700221E55 /* NetworkManager.swift */,
-				3FCF15E429D5E90900221E55 /* Currency.swift */,
+				3FB0EC4929EEF23E00869D1A /* Services */,
+				3FB0EC4829EEF21B00869D1A /* Models */,
 			);
 			path = myCryptoWallet;
+			sourceTree = "<group>";
+		};
+		3FB0EC4629EEF1C900869D1A /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				3F1EE0F129B658A30062E38B /* LogInViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		3FB0EC4729EEF1E000869D1A /* CryptoList */ = {
+			isa = PBXGroup;
+			children = (
+				3F2EC87E29B660FE00C1371B /* CryptoListViewController.swift */,
+				3FB0EC4C29EEF33000869D1A /* CryptoListViewModel.swift */,
+				3FB0EC5429EEFAA500869D1A /* CryptoCell */,
+			);
+			name = CryptoList;
+			sourceTree = "<group>";
+		};
+		3FB0EC4829EEF21B00869D1A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3FCF15E429D5E90900221E55 /* Currency.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		3FB0EC4929EEF23E00869D1A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3FCF15E229D5E8E700221E55 /* NetworkManager.swift */,
+				3FB0EC4A29EEF25800869D1A /* DataManager.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		3FB0EC5429EEFAA500869D1A /* CryptoCell */ = {
+			isa = PBXGroup;
+			children = (
+				3FB0EC4E29EEF9E900869D1A /* CryptoCell.swift */,
+				3FB0EC5229EEFA1800869D1A /* CryptoCellViewModel.swift */,
+			);
+			name = CryptoCell;
 			sourceTree = "<group>";
 		};
 		3FF48A4629CCAB2800201703 /* Application */ = {
@@ -89,15 +142,6 @@
 				3F1EE0EF29B658A30062E38B /* SceneDelegate.swift */,
 			);
 			name = Application;
-			sourceTree = "<group>";
-		};
-		3FF48A4729CCAB4400201703 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				3F1EE0F129B658A30062E38B /* LogInViewController.swift */,
-				3F2EC87E29B660FE00C1371B /* CryptoListViewController.swift */,
-			);
-			name = Views;
 			sourceTree = "<group>";
 		};
 		3FF48A4829CCAB5100201703 /* Supporting Files */ = {
@@ -187,10 +231,14 @@
 			files = (
 				3FCF15E529D5E90900221E55 /* Currency.swift in Sources */,
 				3F1EE0F229B658A30062E38B /* LogInViewController.swift in Sources */,
+				3FB0EC4F29EEF9E900869D1A /* CryptoCell.swift in Sources */,
 				3F2EC87F29B660FE00C1371B /* CryptoListViewController.swift in Sources */,
+				3FB0EC4B29EEF25800869D1A /* DataManager.swift in Sources */,
 				3FCF15E329D5E8E700221E55 /* NetworkManager.swift in Sources */,
+				3FB0EC4D29EEF33000869D1A /* CryptoListViewModel.swift in Sources */,
 				3F1EE0EE29B658A30062E38B /* AppDelegate.swift in Sources */,
 				3F1EE0F029B658A30062E38B /* SceneDelegate.swift in Sources */,
+				3FB0EC5329EEFA1800869D1A /* CryptoCellViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

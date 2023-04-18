@@ -6,15 +6,15 @@
 //
 
 struct Currency: Decodable {
-    let data: [Info]
+    let data: [CurrencyInfo]
     let timestamp: Int
 }
 
-struct Info: Decodable {
+struct CurrencyInfo: Decodable {
     let id: String
     let rank: String?
     let symbol: String?
-    let name: String?
+    let name: String
     let supply: String?
     let maxSupply: String?
     let marketCapUsd: String?
@@ -23,5 +23,5 @@ struct Info: Decodable {
     let changePercent24Hr: String?
     let vwap24Hr: String?
     let explorer: String?
-
+    
 }
