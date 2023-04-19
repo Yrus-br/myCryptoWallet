@@ -8,7 +8,8 @@
 import UIKit
 
 
-class CryptoListViewController: UITableViewController {
+class CryptoListViewController: UITableViewController, UISearchControllerDelegate {
+    
     private var viewModel: CryptoListViewModelProtocol!
     
     private let reuseIdentifier = "Cell"
@@ -35,6 +36,7 @@ class CryptoListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.register(CryptoCell.self, forCellReuseIdentifier: reuseIdentifier)
         
         viewModel.getData { [weak self] in
@@ -63,8 +65,7 @@ class CryptoListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! CryptoCell
         if isFiltering {
-            // TODO: Исправить модель для CryptoCell для фильтрации поиска
-            //            cell.viewModel = viewModel.filteredCurrencys(for: indexPath)
+            cell.viewModel = viewModel.cellForFilteredCurrencys(for: indexPath).flatMap { CryptoCellViewModel(currency: $0) }
         } else {
             cell.viewModel = viewModel.cellViewModel(for: indexPath)
         }

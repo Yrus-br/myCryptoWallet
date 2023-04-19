@@ -16,6 +16,7 @@
 		3FB0EC4D29EEF33000869D1A /* CryptoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB0EC4C29EEF33000869D1A /* CryptoListViewModel.swift */; };
 		3FB0EC4F29EEF9E900869D1A /* CryptoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB0EC4E29EEF9E900869D1A /* CryptoCell.swift */; };
 		3FB0EC5329EEFA1800869D1A /* CryptoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB0EC5229EEFA1800869D1A /* CryptoCellViewModel.swift */; };
+		3FB0EC5629F04E9A00869D1A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB0EC5529F04E9A00869D1A /* LoginViewModel.swift */; };
 		3FCF15E329D5E8E700221E55 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCF15E229D5E8E700221E55 /* NetworkManager.swift */; };
 		3FCF15E529D5E90900221E55 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCF15E429D5E90900221E55 /* Currency.swift */; };
 		3FF48A4B29CCAD6A00201703 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3FF48A4A29CCAD6A00201703 /* SnapKit */; };
@@ -46,6 +47,7 @@
 		3FB0EC4C29EEF33000869D1A /* CryptoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListViewModel.swift; sourceTree = "<group>"; };
 		3FB0EC4E29EEF9E900869D1A /* CryptoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCell.swift; sourceTree = "<group>"; };
 		3FB0EC5229EEFA1800869D1A /* CryptoCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCellViewModel.swift; sourceTree = "<group>"; };
+		3FB0EC5529F04E9A00869D1A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		3FCF15E229D5E8E700221E55 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		3FCF15E429D5E90900221E55 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				3F1EE0F129B658A30062E38B /* LogInViewController.swift */,
+				3FB0EC5529F04E9A00869D1A /* LoginViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 			files = (
 				3FCF15E529D5E90900221E55 /* Currency.swift in Sources */,
 				3F1EE0F229B658A30062E38B /* LogInViewController.swift in Sources */,
+				3FB0EC5629F04E9A00869D1A /* LoginViewModel.swift in Sources */,
 				3FB0EC4F29EEF9E900869D1A /* CryptoCell.swift in Sources */,
 				3F2EC87F29B660FE00C1371B /* CryptoListViewController.swift in Sources */,
 				3FB0EC4B29EEF25800869D1A /* DataManager.swift in Sources */,
@@ -381,9 +385,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = myNameAndI.myCryptoWallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -409,9 +416,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = myNameAndI.myCryptoWallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

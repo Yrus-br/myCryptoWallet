@@ -10,51 +10,60 @@ import SnapKit
 
 final class LogInViewController: UIViewController {
     
+    let welcomeLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Hey! Welcome! 🪙"
+        label.font = .italicSystemFont(ofSize: 30)
+        return label
+    }()
+    
+    let logInTF: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "LOGIN"
+        textField.borderStyle = .roundedRect
+        textField.layer.cornerRadius = 10
+        return textField
+    }()
+    
+    let passwordTF: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "PASSWORD"
+        textField.borderStyle = .roundedRect
+        textField.layer.cornerRadius = 10
+        textField.isSecureTextEntry = true
+        let showPasswordButton = UIButton(type: .custom)
+        showPasswordButton.setImage(UIImage(systemName: "eye"), for: .normal)
+        
+        // TODO: разобраться почему выдает ошибку, возможно нужно поменять местоположение TF
+        showPasswordButton.addTarget(self, action: #selector(showPasswordButtonTapped), for: .touchUpInside)
+        textField.rightView = showPasswordButton
+        textField.rightViewMode = .always
+        return textField
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        
         initialise()
     }
     
+    @objc private func showPasswordButtonTapped(sender: UIButton) {
+        passwordTF.isSecureTextEntry.toggle()
+        let imageName = passwordTF.isSecureTextEntry ? "eye" : "eye.slash"
+        sender.setImage(UIImage(systemName: imageName), for: .normal)
+    }
     
     @objc private func confirmlogIn() {
         let viewModel = CryptoListViewModel()
         let viewController = CryptoListViewController(viewModel: viewModel)
-        self.view.window?.rootViewController = UINavigationController(rootViewController: viewController)
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     private  func initialise() {
-        
         view.backgroundColor = UIColor(red: 241/255,
                                        green: 238/255,
                                        blue: 228/255,
                                        alpha: 1)
-        
-        let welcomeLabel: UILabel = {
-            let label = UILabel()
-            label.text = "Hey! Welcome! 🪙"
-            label.font = .italicSystemFont(ofSize: 30)
-            return label
-        }()
-        
-        let logInTF: UITextField = {
-            let textField = UITextField()
-            textField.placeholder = "LOGIN"
-            textField.borderStyle = .roundedRect
-            textField.layer.cornerRadius = 10
-            return textField
-        }()
-        
-        let passwordTF: UITextField = {
-            let textField = UITextField()
-            textField.placeholder = "PASSWORD"
-            textField.borderStyle = .roundedRect
-            textField.layer.cornerRadius = 10
-            return textField
-        }()
-        
         let confirmButton: UIButton = {
             var attributes = AttributeContainer()
             attributes.font = UIFont.boldSystemFont(ofSize: 18)
@@ -121,3 +130,5 @@ final class LogInViewController: UIViewController {
     }
     
 }
+
+
