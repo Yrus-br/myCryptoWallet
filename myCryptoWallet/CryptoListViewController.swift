@@ -72,6 +72,16 @@ class CryptoListViewController: UITableViewController, UISearchControllerDelegat
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let cryptoInfoVC = CryptoInfoViewController()
+        cryptoInfoVC.viewModel = viewModel.getCryptoInfoViewModel(for: indexPath)
+        
+        navigationController?.pushViewController(cryptoInfoVC, animated: true)
+    }
+
+
     
     private func setupSearchController() {
         searchController.searchResultsUpdater = self

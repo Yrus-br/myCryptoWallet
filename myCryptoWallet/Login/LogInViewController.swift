@@ -35,7 +35,7 @@ final class LogInViewController: UIViewController {
         showPasswordButton.setImage(UIImage(systemName: "eye"), for: .normal)
         
         // TODO: разобраться почему выдает ошибку, возможно нужно поменять местоположение TF
-        showPasswordButton.addTarget(self, action: #selector(showPasswordButtonTapped), for: .touchUpInside)
+        showPasswordButton.addTarget(self, action: #selector(showPasswordButtonTapped(sender:)), for: .touchUpInside)
         textField.rightView = showPasswordButton
         textField.rightViewMode = .always
         return textField
@@ -47,7 +47,7 @@ final class LogInViewController: UIViewController {
         initialise()
     }
     
-    @objc private func showPasswordButtonTapped(sender: UIButton) {
+    @objc func showPasswordButtonTapped(sender: UIButton) {
         passwordTF.isSecureTextEntry.toggle()
         let imageName = passwordTF.isSecureTextEntry ? "eye" : "eye.slash"
         sender.setImage(UIImage(systemName: imageName), for: .normal)

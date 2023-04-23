@@ -12,7 +12,7 @@ struct Currency: Decodable {
 
 struct CurrencyInfo: Decodable {
     let id: String
-    let rank: String?
+    let rank: String
     let symbol: String?
     let name: String
     let supply: String?

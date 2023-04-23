@@ -12,12 +12,18 @@ protocol CryptoListViewModelProtocol {
     var filteredCurrencys: [CurrencyInfo] { get set }
     
     func getData(completion: @escaping () -> Void)
-    func cellViewModel(for index: IndexPath) -> CryptoCellViewModelProtocol?
     func numberOfRows() -> Int
+    func cellViewModel(for index: IndexPath) -> CryptoCellViewModelProtocol?
     func cellForFilteredCurrencys(for index: IndexPath) -> CurrencyInfo?
+    func getCryptoInfoViewModel(for index: IndexPath) -> CryptoInfoViewModel?
 }
 
 class CryptoListViewModel: CryptoListViewModelProtocol {
+    
+    func getCryptoInfoViewModel(for index: IndexPath) -> CryptoInfoViewModel? {
+        CryptoInfoViewModel(crypto: allCurrencys[index.row])
+    }
+    
     func cellForFilteredCurrencys(for index: IndexPath) -> CurrencyInfo? {
         guard isFiltering else { return nil }
         return filteredCurrencys[safe: index.row]

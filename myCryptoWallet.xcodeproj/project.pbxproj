@@ -17,6 +17,8 @@
 		3FB0EC4F29EEF9E900869D1A /* CryptoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB0EC4E29EEF9E900869D1A /* CryptoCell.swift */; };
 		3FB0EC5329EEFA1800869D1A /* CryptoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB0EC5229EEFA1800869D1A /* CryptoCellViewModel.swift */; };
 		3FB0EC5629F04E9A00869D1A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB0EC5529F04E9A00869D1A /* LoginViewModel.swift */; };
+		3FB0EC5929F5B92D00869D1A /* CryptoInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB0EC5829F5B92D00869D1A /* CryptoInfoViewController.swift */; };
+		3FB0EC5B29F5B96100869D1A /* CryptoInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB0EC5A29F5B96100869D1A /* CryptoInfoViewModel.swift */; };
 		3FCF15E329D5E8E700221E55 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCF15E229D5E8E700221E55 /* NetworkManager.swift */; };
 		3FCF15E529D5E90900221E55 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCF15E429D5E90900221E55 /* Currency.swift */; };
 		3FF48A4B29CCAD6A00201703 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3FF48A4A29CCAD6A00201703 /* SnapKit */; };
@@ -48,6 +50,8 @@
 		3FB0EC4E29EEF9E900869D1A /* CryptoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCell.swift; sourceTree = "<group>"; };
 		3FB0EC5229EEFA1800869D1A /* CryptoCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCellViewModel.swift; sourceTree = "<group>"; };
 		3FB0EC5529F04E9A00869D1A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		3FB0EC5829F5B92D00869D1A /* CryptoInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoInfoViewController.swift; sourceTree = "<group>"; };
+		3FB0EC5A29F5B96100869D1A /* CryptoInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoInfoViewModel.swift; sourceTree = "<group>"; };
 		3FCF15E229D5E8E700221E55 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		3FCF15E429D5E90900221E55 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,6 +87,7 @@
 		3F1EE0EC29B658A30062E38B /* myCryptoWallet */ = {
 			isa = PBXGroup;
 			children = (
+				3FB0EC5729F5B90200869D1A /* CryptoInfo */,
 				3FB0EC4729EEF1E000869D1A /* CryptoList */,
 				3FB0EC4629EEF1C900869D1A /* Login */,
 				3FF48A4629CCAB2800201703 /* Application */,
@@ -136,6 +141,15 @@
 				3FB0EC5229EEFA1800869D1A /* CryptoCellViewModel.swift */,
 			);
 			name = CryptoCell;
+			sourceTree = "<group>";
+		};
+		3FB0EC5729F5B90200869D1A /* CryptoInfo */ = {
+			isa = PBXGroup;
+			children = (
+				3FB0EC5829F5B92D00869D1A /* CryptoInfoViewController.swift */,
+				3FB0EC5A29F5B96100869D1A /* CryptoInfoViewModel.swift */,
+			);
+			name = CryptoInfo;
 			sourceTree = "<group>";
 		};
 		3FF48A4629CCAB2800201703 /* Application */ = {
@@ -233,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FCF15E529D5E90900221E55 /* Currency.swift in Sources */,
+				3FB0EC5929F5B92D00869D1A /* CryptoInfoViewController.swift in Sources */,
 				3F1EE0F229B658A30062E38B /* LogInViewController.swift in Sources */,
 				3FB0EC5629F04E9A00869D1A /* LoginViewModel.swift in Sources */,
 				3FB0EC4F29EEF9E900869D1A /* CryptoCell.swift in Sources */,
@@ -243,6 +258,7 @@
 				3F1EE0EE29B658A30062E38B /* AppDelegate.swift in Sources */,
 				3F1EE0F029B658A30062E38B /* SceneDelegate.swift in Sources */,
 				3FB0EC5329EEFA1800869D1A /* CryptoCellViewModel.swift in Sources */,
+				3FB0EC5B29F5B96100869D1A /* CryptoInfoViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
