@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Foundation
 
 
 class CryptoListViewController: UITableViewController, UISearchControllerDelegate {
@@ -36,7 +37,7 @@ class CryptoListViewController: UITableViewController, UISearchControllerDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print(self)
         tableView.register(CryptoCell.self, forCellReuseIdentifier: reuseIdentifier)
         
         viewModel.getData { [weak self] in
